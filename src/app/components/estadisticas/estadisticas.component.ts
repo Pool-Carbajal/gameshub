@@ -1,3 +1,28 @@
+/*
+RESPUESTAS PARTE 4.1:
+1. ¿En qué archivo se define la interfaz Juego?
+   Respuesta: 
+en el interfaces/juego.interface.ts
+2. ¿Qué archivo maneja el estado global de los filtros?
+   Respuesta: inicio/lista-juegos/lista-juegos.component.ts
+
+3. ¿Dónde se configura el HttpClient para la aplicación?
+   Respuesta: 
+En el main.ts
+/*
+RESPUESTAS PARTE 4.2:
+1. ¿Por qué este proyecto NO tiene app.module.ts?
+   Respuesta: En lugar de declarar componentes en un módulo raíz como AppModule, ahora
+    los componentes pueden ser autónomos (standalone), lo que significa que se definen y configuran 
+    por sí mismos sin necesidad de estar registrados en un módulo.
+
+
+
+2. ¿Qué ventaja tiene usar BehaviorSubject en el servicio de juegos?
+   Respuesta: permite mantener y emitir el valor actual de la lista de juegos en todo momento, lo que facilita que los componentes reciban automáticamente
+    el último estado disponible sin necesidad de esperar un nuevo valor. 
+   Además, permite actualizar los datos desde el servicio y notificar a todos los suscriptores de forma reactiva.
+*/
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';

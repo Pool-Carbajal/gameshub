@@ -24,6 +24,35 @@ export class JuegosDataService {
   obtenerJuegos(): Observable<Juego[]> {
     return this.juegos$;
   }
+  // ...existing code...
+
+getJuegosPorPrecio(min: number, max: number): Observable<Juego[]> {
+  return this.juegos$.pipe(
+    map(juegos => juegos.filter(juego => juego.precio >= min && juego.precio <= max))
+  );
+}
+
+getEstadisticas(): Observable<{
+  totalJuegos: number;
+  juegosGratis: number;
+  juegosPago: number;
+  mejorRating: number;
+  promedioPrecio: number;
+}> {
+  return this.juegos$.pipe(
+    map(juegos => {
+      const totalJuegos = juegos.length;
+      const juegosGratis = juegos.filter(j => j.esGratis).length;
+      const juegosPago = totalJuegos - juegosGratis;
+      const mejorRating = juegos.length > 0 ? Math.max(...juegos.map(j => j.rating)) : 0;
+      const promedioPrecio = juegos.length > 0
+        ? juegos.reduce((acc, j) => acc + j.precio, 0) / juegos.length
+        : 0;
+      return { totalJuegos, juegosGratis, juegosPago, mejorRating, promedioPrecio };
+    })
+  );
+}
+
 
   obtenerJuegoPorId(id: number): Observable<Juego | undefined> {
     return this.juegos$.pipe(
