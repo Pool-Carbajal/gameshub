@@ -1,4 +1,15 @@
-<!-- Header de búsqueda -->
+<!-- Selector de ordenamiento: ponlo después de la barra de búsqueda -->
+<div class="mb-3">
+  <label for="ordenarPor" class="form-label">Ordenar por:</label>
+  <select id="ordenarPor" class="form-select" [(ngModel)]="ordenSeleccionada" (change)="ordenarJuegos()">
+    <option value="nombre-asc">Nombre: A-Z</option>
+    <option value="nombre-desc">Nombre: Z-A</option>
+    <option value="precio-asc">Precio: Menor a Mayor</option>
+    <option value="precio-desc">Precio: Mayor a Menor</option>
+    <option value="rating-desc">Rating: Mejor a Peor</option>
+    <option value="rating-asc">Rating: Peor a Mejor</option>
+  </select>
+</div><!-- Header de búsqueda -->
 <section class="search-header py-4 bg-darker">
   <div class="container">
     <div class="row">

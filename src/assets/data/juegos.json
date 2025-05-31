@@ -445,51 +445,85 @@
       "tags": ["MOBA", "Estrategia", "Competitivo", "eSports"]
     },
     {
-      "id": 14,
-      "nombre": "NBA 2K24",
-      "imagen": "https://nba2k24.2k.com/assets/images/nba2k24-kobe-bg.jpg",
-      "categoria": "Sports",
-      "desarrollador": "Visual Concepts",
-      "fechaLanzamiento": "2023-09-08",
-      "descripcion": "NBA 2K24 presenta a Kobe Bryant mientras redefine lo que significa Mamba Mentality con innovación y autenticidad.",
-      "rating": 4.0,
-      "plataformas": ["PC", "PlayStation", "Xbox", "Nintendo Switch"],
-      "precio": 59.99,
-      "esGratis": false,
-      "requisitos": {
-        "minimos": {
-          "os": "Windows 10 64-bit",
-          "procesador": "Intel Core i3-2100",
-          "memoria": "4 GB RAM",
-          "graficos": "NVIDIA GeForce GT 450",
-          "almacenamiento": "110 GB"
-        },
-        "recomendados": {
-          "os": "Windows 11 64-bit",
-          "procesador": "Intel Core i5-4430",
-          "memoria": "8 GB RAM",
-          "graficos": "NVIDIA GeForce GTX 770",
-          "almacenamiento": "110 GB"
-        }
-      },
-      "screenshots": [
-        "https://nba2k24.2k.com/assets/images/screenshot1.jpg",
-        "https://nba2k24.2k.com/assets/images/screenshot2.jpg"
-      ],
-      "tags": ["Baloncesto", "Deportes", "Simulación", "MyCAREER"]
+  "id": 14,
+  "nombre": "NBA 2K24",
+  "imagen": "https://nba2k24.2k.com/assets/images/nba2k24-kobe-bg.jpg",
+  "categoria": "Sports",
+  "desarrollador": "Visual Concepts",
+  "fechaLanzamiento": "2023-09-08",
+  "descripcion": "NBA 2K24 presenta a Kobe Bryant mientras redefine lo que significa Mamba Mentality con innovación y autenticidad.",
+  "rating": 4.0,
+  "plataformas": ["PC", "PlayStation", "Xbox", "Nintendo Switch"],
+  "precio": 59.99,
+  "esGratis": false,
+  "requisitos": {
+    "minimos": {
+      "os": "Windows 10 64-bit",
+      "procesador": "Intel Core i3-2100",
+      "memoria": "4 GB RAM",
+      "graficos": "NVIDIA GeForce GT 450",
+      "almacenamiento": "110 GB"
     },
-    {
-      "id": 15,
-      "nombre": "Mobile Legends",
-      "imagen": "https://play-lh.googleusercontent.com/Qxcg8RNAS9l_VUxHNPifSKHq0FRCPaVZCETd1jUPxFPf0fBBKEEtQZsJx2fH-K1yFg",
-      "categoria": "MOBA",
-      "desarrollador": "Moonton",
-      "fechaLanzamiento": "2016-07-14",
-      "descripcion": "Mobile Legends: Bang Bang es un MOBA móvil donde dos equipos de 5 jugadores luchan en tiempo real por la victoria.",
-      "rating": 4.3,
-      "plataformas": ["Mobile"],
-      "precio": 0,
-      "esGratis": true,
+    "recomendados": {
+      "os": "Windows 11 64-bit",
+      "procesador": "Intel Core i5-4430",
+      "memoria": "8 GB RAM",
+      "graficos": "NVIDIA GeForce GTX 770",
+      "almacenamiento": "110 GB"
+    }
+  },
+  "screenshots": [
+    "https://nba2k24.2k.com/assets/images/screenshot1.jpg",
+    "https://nba2k24.2k.com/assets/images/screenshot2.jpg"
+  ],
+  "tags": ["Baloncesto", "Deportes", "Simulación", "MyCAREER"]
+},
+{
+  "id": 15,
+  "nombre": "Mobile Legends",
+  "imagen": "https://play-lh.googleusercontent.com/Qxcg8RNAS9l_VUxHNPifSKHq0FRCPaVZCETd1jUPxFPf0fBBKEEtQZsJx2fH-K1yFg",
+  "categoria": "MOBA",
+  "desarrollador": "Moonton",
+  "fechaLanzamiento": "2016-07-14",
+  "descripcion": "Mobile Legends: Bang Bang es un MOBA móvil donde dos equipos de 5 jugadores luchan en tiempo real por la victoria.",
+  "rating": 4.3,
+  "plataformas": ["Mobile"],
+  "precio": 0,
+  "esGratis": true,
+  "requisitos": {
+    "minimos": {
+      "os": "Android 4.1 / iOS 9.0",
+      "procesador": "Qualcomm Snapdragon 410",
+      "memoria": "1.5 GB RAM",
+      "graficos": "Adreno 306",
+      "almacenamiento": "1 GB"
+    },
+    "recomendados": {
+      "os": "Android 7.0 / iOS 11.0",
+      "procesador": "Snapdragon 625",
+      "memoria": "3 GB RAM",
+      "graficos": "Adreno 506",
+      "almacenamiento": "2 GB"
+    }
+  },
+  "screenshots": [
+    "https://play-lh.googleusercontent.com/screenshot1.jpg",
+    "https://play-lh.googleusercontent.com/screenshot2.jpg"
+  ],
+  "tags": ["MOBA", "Mobile", "5v5", "Estrategia"]
+},
+{
+   "id": 16,
+      "nombre": "Gran turismo 7",
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBnPjwE-_-PtMEd_Y-An8215uFwFG_o2GZBg&s",
+      "categoria": "sports",
+      "desarrollador": "Polyphony Digital",
+      "fechaLanzamiento": "2018-06-15",
+      "descripcion": "Un juego multijugador en el que los jugadores deben recorrer varias pistas de carreras.",
+      "rating": 4.5,
+      "plataformas": ["PC", "PlayStation"],
+      "precio": 69.99,
+      "esGratis": false,
       "requisitos": {
         "minimos": {
           "os": "Android 4.1 / iOS 9.0",
@@ -505,13 +539,53 @@
           "graficos": "Adreno 506",
           "almacenamiento": "2 GB"
         }
+
       },
       "screenshots": [
         "https://play-lh.googleusercontent.com/screenshot1.jpg",
         "https://play-lh.googleusercontent.com/screenshot2.jpg"
       ],
       "tags": ["MOBA", "Mobile", "5v5", "Estrategia"]
+    },
+    {
+      "id": 17,
+      "nombre": "The legend of zelda: BotW",
+      "imagen": "https://media.wired.com/photos/633c95ef85e7a4cc2f802256/3:2/w_2400,h_1600,c_limit/Breath-of-the-Wild-Casual-Gamer-Culture.jpg",
+      "categoria": "adventure",
+      "desarrollador": "Nintendo EPD",
+      "fechaLanzamiento": "2020-03-10",
+      "descripcion": "Es un juego que te dará muchas horas de diversión, con aventuras por explorar.",
+      "rating": 4.9,
+      "plataformas": ["Nintendo Switch"],
+      "precio": 59.99,
+      "esGratis": false,
+      "requisitos": {
+        "minimos": {
+          "os": "Windows 10 64-bit",
+          "procesador": "Intel Core i3-4340",
+          "memoria": "8 GB RAM",
+          "graficos": "NVIDIA GTX 670 / GTX 1650",
+          "almacenamiento": "175 GB"
+        },
+        "recomendados": {
+          "os": "Windows 10 64-bit",
+          "procesador": "Intel Core i5-2500K",
+          "memoria": "12 GB RAM",
+          "graficos": "NVIDIA GTX 970 / GTX 1660",
+          "almacenamiento": "175 GB"
+
+        }
+
+      },
+
+      "screenshots": [
+        "https://www.callofduty.com/content/dam/atvi/callofduty/warzone/screenshots/warzone1.jpg",
+        "https://www.callofduty.com/content/dam/atvi/callofduty/warzone/screenshots/warzone2.jpg"
+      ],
+      "trailer": "https://www.youtube.com/watch?v=UoV4P6_e-Gk",
+      "tags": ["Shooter", "Battle Royale", "Multijugador", "Acción"]
     }
+
   ],
   "categorias": [
     {
@@ -555,6 +629,13 @@
       "icono": "bi-trophy",
       "descripcion": "Juegos deportivos con simulación realista de diferentes disciplinas",
       "color": "#4ecdc4"
+    },
+    {
+      "id": "adventure",
+      "nombre": "Adventure",
+      "icono": "bi-compass",
+      "descripcion": "Juegos de aventura y exploración con narrativas épicas",
+      "color": "#ffa500"
     }
   ]
 }

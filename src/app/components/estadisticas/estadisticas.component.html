@@ -1,0 +1,203 @@
+
+@if(estadisticas$ | async; as stats) {
+ 
+  <section class="stats-header py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <div class="page-header">
+            <nav class="breadcrumb-nav mb-3">
+              <a routerLink="/inicio" class="breadcrumb-link">
+                <i class="bi bi-arrow-left"></i> Volver al Inicio
+              </a>
+            </nav>
+            <h1 class="page-title">
+              <i class="bi bi-graph-up text-primary"></i>
+              Estadísticas
+            </h1>
+            <p class="page-description">
+              Descubre datos interesantes sobre nuestra colección de juegos
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="stats-cards py-5 bg-dark text-light">
+    <div class="container">
+      <div class="row g-4">
+        
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-card text-center p-4 rounded-4 shadow-lg bg-gradient bg-primary bg-opacity-75">
+            <div class="stat-icon mb-3">
+              <i class="bi bi-collection fs-1 text-white"></i>
+            </div>
+            <div class="stat-content">
+              <h3 class="stat-number fw-bold display-6">{{stats.totalJuegos}}</h3>
+              <p class="stat-label text-uppercase">Total de Juegos</p>
+            </div>
+          </div>
+        </div>
+
+       
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-card text-center p-4 rounded-4 shadow-lg bg-gradient" style="background: linear-gradient(135deg, #00c9a7, #92fe9d);">
+            <div class="stat-icon mb-3">
+              <i class="bi bi-gift fs-1 text-white"></i>
+            </div>
+            <div class="stat-content">
+              <h3 class="stat-number fw-bold display-6">{{stats.juegosGratuitos}}</h3>
+              <p class="stat-label text-uppercase">Juegos Gratuitos</p>
+            </div>
+          </div>
+        </div>
+
+       
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-card text-center p-4 rounded-4 shadow-lg bg-gradient" style="background: linear-gradient(135deg, #f9c80e, #ff6f00);">
+            <div class="stat-icon mb-3">
+              <i class="bi bi-credit-card fs-1 text-white"></i>
+            </div>
+            <div class="stat-content">
+              <h3 class="stat-number fw-bold display-6">{{stats.juegosDePago}}</h3>
+              <p class="stat-label text-uppercase">Juegos de Pago</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-card text-center p-4 rounded-4 shadow-lg bg-gradient" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">
+            <div class="stat-icon mb-3">
+              <i class="bi bi-graph-up-arrow fs-1 text-white"></i>
+            </div>
+            <div class="stat-content">
+              <h3 class="stat-number fw-bold display-6">${{stats.promedioPrecio | number:'1.0-0'}}</h3>
+              <p class="stat-label text-uppercase">Prom. de Precios</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  @if(stats.mejorJuego) {
+    <section class="featured-game py-5 bg-darker">
+      <div class="container">
+        <h3 class="subtitle-gaming mb-4">
+          <i class="bi bi-trophy text-warning"></i>
+          Juego con Mejor Rating
+        </h3>
+        
+        <div class="row align-items-center">
+          <div class="col-lg-4">
+            <div class="featured-image">
+              <img [src]="stats.mejorJuego.imagen" 
+                   [alt]="stats.mejorJuego.nombre" 
+                   class="img-fluid rounded shadow-lg">
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="featured-content">
+              <div class="game-badges mb-3">
+                <span class="badge-gaming secondary">{{stats.mejorJuego.categoria}}</span>
+                @if(stats.mejorJuego.esGratis) {
+                  <span class="badge-gaming" style="background: var(--success-color); border-color: var(--success-color);">
+                    <i class="bi bi-star-fill"></i> GRATIS
+                  </span>
+                }
+              </div>
+              
+              <h2 class="featured-title mb-3">{{stats.mejorJuego.nombre}}</h2>
+              
+              <div class="game-meta mb-3">
+                <div class="meta-item">
+                  <i class="bi bi-building"></i>
+                  <span>{{stats.mejorJuego.desarrollador}}</span>
+                </div>
+                <div class="meta-item">
+                  <div class="rating">
+                    @for(estrella of obtenerEstrellas(stats.mejorJuego.rating); track $index) {
+                      <i class="bi" [class.bi-star-fill]="estrella === 1" [class.bi-star]="estrella === 0"></i>
+                    }
+                    <span class="ms-2">{{stats.mejorJuego.rating}}/5</span>
+                  </div>
+                </div>
+              </div>
+              
+              <p class="featured-description mb-4">{{stats.mejorJuego.descripcion}}</p>
+              
+              <div class="featured-actions">
+                <a [routerLink]="['/juego', stats.mejorJuego.id]" class="btn btn-gaming">
+                  <i class="bi bi-eye"></i> Ver Detalles
+                </a>
+                <span class="price ms-3">
+                  @if(stats.mejorJuego.esGratis) {
+                    <span class="text-success fw-bold">¡GRATIS!</span>
+                  } @else {
+                    <span class="fw-bold">${{stats.mejorJuego.precio}}</span>
+                  }
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  }
+
+
+  <section class="stats-chart py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="chart-container">
+            <h3 class="subtitle-gaming mb-4 text-center">
+              <i class="bi bi-pie-chart"></i>
+              Distribución de Juegos
+            </h3>
+            
+            <div class="distribution-chart">
+              <div class="chart-item">
+                <div class="chart-bar">
+                  <div class="bar-fill free" 
+                       [style.width.%]="(stats.juegosGratuitos / stats.totalJuegos) * 100">
+                  </div>
+                </div>
+                <div class="chart-legend">
+                  <span class="legend-color free"></span>
+                  <span class="legend-text">Juegos Gratuitos ({{stats.juegosGratuitos}})</span>
+                  <span class="legend-percentage">{{((stats.juegosGratuitos / stats.totalJuegos) * 100) | number:'1.0-1'}}%</span>
+                </div>
+              </div>
+              
+              <div class="chart-item">
+                <div class="chart-bar">
+                  <div class="bar-fill paid" 
+                       [style.width.%]="(stats.juegosDePago / stats.totalJuegos) * 100">
+                  </div>
+                </div>
+                <div class="chart-legend">
+                  <span class="legend-color paid"></span>
+                  <span class="legend-text">Juegos de Pago ({{stats.juegosDePago}})</span>
+                  <span class="legend-percentage">{{((stats.juegosDePago / stats.totalJuegos) * 100) | number:'1.0-1'}}%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+} @else {
+ 
+  <div class="loading-state text-center py-5">
+    <div class="spinner-border text-primary mb-3" role="status">
+      <span class="visually-hidden">Cargando estadísticas...</span>
+    </div>
+    <p class="text-secondary">Calculando estadísticas...</p>
+  </div>
+}
